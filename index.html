@@ -6,12 +6,16 @@
 </head>
 <body>
 
-<h1 class="tit">тестовый сайт</h1>
+<div class="container">
+    <h1 class="tit">тестовый сайт</h1>
 
-<p>нажми на ту кнопку снизу</p>
-<button id="show-btn" class="button">Показать ШМыГ-25</button>
+    <div class="controls">
+        <button id="show-btn" class="button">Показать ШМыГ-25</button>
+        <a class="link" href="https://zaharikpro1505-dot.github.io/-kak_pogladit_kotofeya/">как погладить Котофея</a>
+    </div>
+</div>
 
-<a class="link" href="https://zaharikpro1505-dot.github.io/-kak_pogladit_kotofeya/">как погладить Котофея</a>
+<img class="img" src="ШМыГ-25попробуйдоверни.jpg" alt="ШМыГ-25">
 
 <ul>
    <li>нажми кнопку</li>
@@ -19,21 +23,13 @@
    <li>посмотри инструкцию</li>
 </ul>
 
-<img class="img" src="ШМыГ-25попробуйдоверни.jpg" alt="ШМыГ-25">
-
 <script>
 const btn = document.getElementById("show-btn");
 const cat = document.querySelector(".img");
 
 btn.addEventListener("click", () => {
-    cat.classList.toggle("show"); // Плавное появление/скрытие картинки
-
-    // Меняем текст кнопки
-    if(cat.classList.contains("show")){
-        btn.textContent = "Скрыть ШМыГ-25";
-    } else {
-        btn.textContent = "Показать ШМыГ-25";
-    }
+    cat.classList.toggle("show");
+    btn.textContent = cat.classList.contains("show") ? "Скрыть ШМыГ-25" : "Показать ШМыГ-25";
 });
 </script>
 
