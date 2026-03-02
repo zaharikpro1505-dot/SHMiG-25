@@ -2,15 +2,30 @@ body {
     background-color: lightgray;
     font-family: Arial, sans-serif;
     padding: 20px;
+    margin: 0;
+}
+
+/* Контейнер для заголовка и кнопок */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* позволяет переносить элементы на узких экранах */
+    margin-bottom: 15px;
 }
 
 /* Заголовок */
 .tit {
     color: green;
     font-size: 32px;
-    position: absolute;
-    top: 20px;
-    right: 15px;
+    margin: 10px;
+}
+
+/* Контейнер кнопки и ссылки */
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 /* Кнопка */
@@ -20,7 +35,6 @@ body {
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
-    margin: 10px 0;
     border: none;
     font-size: 16px;
 }
@@ -30,44 +44,53 @@ body {
     text-decoration: none;
     color: darkgreen;
     cursor: pointer;
-    display: inline-block;
-    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 /* Картинка с плавным появлением */
 .img {
     max-width: 100%;
     height: auto;
-    opacity: 0;             /* прозрачная изначально */
-    visibility: hidden;     /* скрыта */
-    transition: opacity 0.5s ease; /* плавное появление */
+    opacity: 0;             
+    visibility: hidden;     
+    transition: opacity 0.5s ease; 
     display: block;
     margin-top: 15px;
 }
 
-/* Класс show делает картинку видимой */
+/* Класс show */
 .img.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* =====================
-   Медиа-запросы для мобильных
-   ===================== */
+/* Список */
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* =======================
+   Медиазапрос для телефонов
+   ======================= */
 @media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* вертикально */
+        align-items: center;
+    }
     .tit {
-        position: static;       /* заголовок больше не absolute */
         text-align: center;
         font-size: 28px;
         margin-bottom: 10px;
     }
-
-    .button {
-        width: 100%;           /* кнопка растягивается на весь экран */
-        font-size: 18px;
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
-
-    .link {
-        font-size: 16px;
+    .button, .link {
+        width: 100%; /* растягиваем на всю ширину */
+        text-align: center;
+        font-size: 18px;
     }
 }
