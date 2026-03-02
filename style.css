@@ -1,0 +1,73 @@
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Заголовок */
+.tit {
+    color: green;
+    font-size: 32px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+/* Кнопка */
+.button {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px 0;
+    border: none;
+    font-size: 16px;
+}
+
+/* Ссылка */
+.link {
+    text-decoration: none;
+    color: darkgreen;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Картинка с плавным появлением */
+.img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0;             /* прозрачная изначально */
+    visibility: hidden;     /* скрыта */
+    transition: opacity 0.5s ease; /* плавное появление */
+    display: block;
+    margin-top: 15px;
+}
+
+/* Класс show делает картинку видимой */
+.img.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =====================
+   Медиа-запросы для мобильных
+   ===================== */
+@media (max-width: 600px) {
+    .tit {
+        position: static;       /* заголовок больше не absolute */
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        width: 100%;           /* кнопка растягивается на весь экран */
+        font-size: 18px;
+    }
+
+    .link {
+        font-size: 16px;
+    }
+}
